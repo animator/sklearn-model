@@ -1,0 +1,8 @@
+
+.DS_Store
+
+build/*
+dist/*
+examples/.ipynb_checkpoints/*
+sklearn_model.egg-info/*
+*.pyc

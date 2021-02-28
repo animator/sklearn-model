@@ -1,0 +1,151 @@
+{
+    "input": {
+        "Gender": {
+            "type": "category",
+            "values": [
+                "Female",
+                "Male"
+            ]
+        },
+        "Married": {
+            "type": "category",
+            "values": [
+                "No",
+                "Yes"
+            ]
+        },
+        "Dependents": {
+            "type": "int"
+        },
+        "Education": {
+            "type": "category",
+            "values": [
+                "Graduate",
+                "Not Graduate"
+            ]
+        },
+        "Self Employed": {
+            "type": "category",
+            "values": [
+                "No",
+                "Yes"
+            ]
+        },
+        "Applicant Income": {
+            "type": "float"
+        },
+        "Loan Amount": {
+            "type": "int"
+        },
+        "Loan Term": {
+            "type": "int"
+        },
+        "Property Area": {
+            "type": "category",
+            "values": [
+                "Rural",
+                "Semiurban",
+                "Urban"
+            ]
+        }
+    },
+    "output": {
+        "Approved": {
+            "type": "category",
+            "values": [
+                "N",
+                "Y"
+            ]
+        }
+    },
+    "model": {
+        "type": "DecisionTreeClassifier",
+        "scoring_params": {
+            "tree": {
+                "isleaf": false,
+                "field": "Applicant Income",
+                "split_value": 2381.5,
+                "l": {
+                    "isleaf": false,
+                    "field": "Education",
+                    "split_value": 0.5,
+                    "l": {
+                        "isleaf": true,
+                        "class": 0
+                    },
+                    "r": {
+                        "isleaf": false,
+                        "field": "Gender",
+                        "split_value": 0.5,
+                        "l": {
+                            "isleaf": true,
+                            "class": 1
+                        },
+                        "r": {
+                            "isleaf": true,
+                            "class": 0
+                        }
+                    }
+                },
+                "r": {
+                    "isleaf": false,
+                    "field": "Applicant Income",
+                    "split_value": 20199.5,
+                    "l": {
+                        "isleaf": false,
+                        "field": "Loan Term",
+                        "split_value": 420.0,
+                        "l": {
+                            "isleaf": false,
+                            "field": "Loan Amount",
+                            "split_value": 61000.0,
+                            "l": {
+                                "isleaf": true,
+                                "class": 1
+                            },
+                            "r": {
+                                "isleaf": true,
+                                "class": 1
+                            }
+                        },
+                        "r": {
+                            "isleaf": false,
+                            "field": "Dependents",
+                            "split_value": 0.5,
+                            "l": {
+                                "isleaf": true,
+                                "class": 0
+                            },
+                            "r": {
+                                "isleaf": true,
+                                "class": 1
+                            }
+                        }
+                    },
+                    "r": {
+                        "isleaf": false,
+                        "field": "Loan Amount",
+                        "split_value": 585000.0,
+                        "l": {
+                            "isleaf": false,
+                            "field": "Loan Amount",
+                            "split_value": 195500.0,
+                            "l": {
+                                "isleaf": true,
+                                "class": 1
+                            },
+                            "r": {
+                                "isleaf": true,
+                                "class": 0
+                            }
+                        },
+                        "r": {
+                            "isleaf": true,
+                            "class": 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

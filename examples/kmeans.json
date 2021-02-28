@@ -1,0 +1,73 @@
+{
+    "input": {
+        "sepal length (cm)": {
+            "type": "float"
+        },
+        "sepal width (cm)": {
+            "type": "float"
+        },
+        "petal length (cm)": {
+            "type": "float"
+        },
+        "petal width (cm)": {
+            "type": "float"
+        }
+    },
+    "output": {
+        "species": {
+            "type": "category",
+            "values": [
+                "versicolor",
+                "setosa",
+                "virginica"
+            ]
+        }
+    },
+    "transformer": {
+        "type": "MinMax",
+        "scale_fields": {
+            "sepal length (cm)": {
+                "scale": 0.27777777777777773,
+                "min": -1.1944444444444442
+            },
+            "sepal width (cm)": {
+                "scale": 0.41666666666666663,
+                "min": -0.8333333333333333
+            },
+            "petal length (cm)": {
+                "scale": 0.1694915254237288,
+                "min": -0.1694915254237288
+            },
+            "petal width (cm)": {
+                "scale": 0.4166666666666667,
+                "min": -0.04166666666666667
+            }
+        }
+    },
+    "model": {
+        "type": "KMeans",
+        "scoring_params": {
+            "metric": "euclidean",
+            "centers": [
+                {
+                    "sepal length (cm)": 0.4412568306010929,
+                    "sepal width (cm)": 0.3073770491803278,
+                    "petal length (cm)": 0.5757154765212559,
+                    "petal width (cm)": 0.5491803278688525
+                },
+                {
+                    "sepal length (cm)": 0.1961111111111111,
+                    "sepal width (cm)": 0.595,
+                    "petal length (cm)": 0.0783050847457627,
+                    "petal width (cm)": 0.06083333333333335
+                },
+                {
+                    "sepal length (cm)": 0.7072649572649572,
+                    "sepal width (cm)": 0.4508547008547008,
+                    "petal length (cm)": 0.7970447631464579,
+                    "petal width (cm)": 0.8247863247863247
+                }
+            ]
+        }
+    }
+}

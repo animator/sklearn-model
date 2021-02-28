@@ -1,0 +1,66 @@
+{
+    "input": {
+        "X1 house age": {
+            "type": "float"
+        },
+        "X2 distance to the nearest MRT station": {
+            "type": "float"
+        },
+        "X3 number of convenience stores": {
+            "type": "float"
+        },
+        "X4 latitude": {
+            "type": "float"
+        },
+        "X5 longitude": {
+            "type": "float"
+        }
+    },
+    "output": {
+        "Y house price of unit area": {
+            "type": "float"
+        }
+    },
+    "transformer": {
+        "type": "Standard",
+        "scale_fields": {
+            "X1 house age": {
+                "mean": 17.71256038647343,
+                "stddev": 11.378717175302857
+            },
+            "X2 distance to the nearest MRT station": {
+                "mean": 1083.8856889130436,
+                "stddev": 1260.5843868803893
+            },
+            "X3 number of convenience stores": {
+                "mean": 4.094202898550725,
+                "stddev": 2.94200221305731
+            },
+            "X4 latitude": {
+                "mean": 24.969030072463767,
+                "stddev": 0.012395199368548038
+            },
+            "X5 longitude": {
+                "mean": 121.53336108695655,
+                "stddev": 0.015328636553097923
+            },
+            "Y house price of unit area": {
+                "mean": 37.980193236714975,
+                "stddev": 13.590044806293161
+            }
+        }
+    },
+    "model": {
+        "type": "LinearRegression",
+        "scoring_params": {
+            "coefficients": {
+                "X1 house age": -0.20884873246682123,
+                "X2 distance to the nearest MRT station": -0.43647373548273366,
+                "X3 number of convenience stores": 0.24137141607851936,
+                "X4 latitude": 0.2145464231393848,
+                "X5 longitude": -0.03920053208130464
+            },
+            "intercept": 0.030399266888491788
+        }
+    }
+}
