@@ -1,6 +1,6 @@
 # sklearn-model
 
-Python implementation for exporting `scikit-learn` models as per [JSON Machine Learning Model specification](https://github.com/animator/json-ml-model-spec)
+Python implementation for exporting `scikit-learn` models as per [JSON Machine Learning  Model (JMLM) specification](https://github.com/animator/json-ml-model-spec)
 
 ## Installation
 
