@@ -27,7 +27,7 @@ class JMLM(object):
         return cls(model)
         
 
-    def extractRules(self, numericalToCategorical = false):
+    def extractRules(self, numericalToCategorical = False):
         if self.jmlm["model"]["type"] != "DecisionTreeClassifier":
             raise TypeError("Extract Rules only supports model of type 'DecisionTreeClassifier'.")
 
